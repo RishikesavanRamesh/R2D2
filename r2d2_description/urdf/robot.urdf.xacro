@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot name="robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+    <!-- materials -->
+    <xacro:include filename="$(find r2d2_description)/urdf/materials.urdf" />
+
+    <link name="base_link">
+	<visual>
+	    <geometry>
+	        <mesh filename="package://r2d2_description/meshes/body_print.stl" scale="0.008 0.008 0.008"/>
+		<color name="blue"/>
+	    </geometry>	
+	</visual>
+    </link>
+
+    <link name="dome">
+	<visual>
+	    <geometry>
+	        <mesh filename="package://r2d2_description/meshes/dome_print.stl" scale="0.008 0.008 0.008"/>
+		<color name="blue"/>
+	    </geometry>	
+	</visual>
+    </link>
+
+    <joint name="neck" type="revolute">
+      <parent link="base_link" />
+      <child link="dome" />
+    </joint>
+    
+</robot>

@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<robot name="robot" xmlns:xacro="http://ros.org/wiki/xacro">
+
+
+   <!--xacro:include filename="$(find r2d2_description)/urdf/material.urdf" / -->
+
+
+
+
+   <xacro:macro name="r2d2" params="a b c" >
+   </xacro:macro>
+     <!-- r2d2 description -->
+     <link name="base_link">
+        <visual>
+           <geometry>
+              <mesh filename="package://r2d2_description/meshes/body_print.stl"  scale="0.1 0.1 0.1"/>
+           </geometry>
+        </visual>
+     </link>
+     
+</robot>

@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<robot name="origins">
+  <material name="blue">
+    <color rgba="0 0 0.8 1" />
+  </material>
+  <link name="base_link">
+    <visual>
+      <geometry>
+        <mesh filename="file://$(find r2d2_description)/meshes/body_print.stl"/>
+      </geometry>
+    </visual>
+  </link>
+
+  <link name="dome">
+    <visual>
+      <geometry>
+        <mesh filename="package://r2d2_description/meshes/dome_print.stl"/>	
+      </geometry>
+      <material name="blue"/>
+      <origin rpy="0 1.57075 0" xyz="0 0 -0.3"/>
+    </visual>
+  </link>
+
+  <joint name="neck" type="fixed">
+    <parent link="base_link"/>
+    <child link="dome"/>
+    <origin xyz="0 -0.22 0.25"/>
+  </joint>
+
+</robot>
